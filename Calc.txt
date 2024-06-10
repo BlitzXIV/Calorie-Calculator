@@ -1,0 +1,4 @@
+Search Feature(For food nutrition lookup)
+Add custom foods (Filters & CRUD)
+Browser Local Storage 
+	

@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function(){
          });
 
         mealBtn.addEventListener('click', function(){
-            mealTotal += finalCals
+            mealTotal += finalCals.toFixed(1)
             mealLabel.textContent = 'Total Meal Calories ' + mealTotal;
             reset.addEventListener('click' , function(){
             mealContain.removeChild(mealBtn)
