@@ -8,8 +8,8 @@
     <script src="calc.js"></script>
 </head>
 <body>
-    <div class="container">
-        <form id="form">
+    <div id="container" class="container">
+        <form onsubmit="calcCalories(event)" ;id="form">
             Calories Per Serving 
             <br>
             <input required id="calPerServ" type="number">
@@ -22,15 +22,21 @@
             <br>
             <input required id="cstmServ" type="number">
             <br>
-            <button id="button" type="submit">Calculate</button>
+            <button  id="button" type="submit">Calculate</button>
         </form>
         
-        <div id="finCalContain">
+            <div>
+                <p>Calories in food: <span id="finCalContain"></span></p>
+                <button onclick ='mealAdd(event)' id="mealBtn">Add to Meal</button>
+                <button onclick="resetBtn(event)" id="resetBtn">Reset</button>
+            </div>
 
-        </div>
-        <div id="mealContain">
-            
-        </div>
+            <div>
+                <p>Total Meal Calories <span id='mealContain'></span></p>
+            </div>
+
+
+              
     </div>
 
 </body>
