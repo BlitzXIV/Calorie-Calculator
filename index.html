@@ -10,6 +10,7 @@
 <body>
     <div id="customFoodWindow">
         <form id="windowContent">
+            <span onclick='closeCustomFood(event)' id="close">X</span>
             Name your food
             <br>
             <input required id="foodName" type="text">
@@ -22,7 +23,7 @@
             <input required id="window-servAmt" type="number">
             <br>
             <button>Save</button>
-            <span onclick='closeCustomFood(event)' id="close">X</span>
+            
         </form>
     </div>
 

@@ -4,7 +4,7 @@ Browser Local Storage
 
 take numbers from food window
 store in object 
-onclick call and use in calculator 
+    foodname is key
 
 
 

@@ -44,3 +44,15 @@ function closeCustomFood(event){
     const customFoodEle = document.getElementById('add-custom-food')
     customFoodWindow.style.display = 'none' 
 }
+
+function saveFood(event){
+    const foodNameEle = document.getElementById('foodName')
+    const windowCalPerServ = document.getElementById('window-calPerServ')
+    const windowServAmt = document.getElementById('window-servAmt')
+
+    foodData = {}
+    foodName = foodNameEle.value
+    foodData[foodName] = [windowCalPerServ.value, windowServAmt.value]
+
+    localStorage.setItem('foodData', JSON.stringify(foodData));
+}
