@@ -1,13 +1,5 @@
-function html(strings, ...values) {
-    const parsedArgs = strings.reduce((result, string, i) => result + string + (values[i] || ''), '');
-    const parser = new DOMParser();
-    const doc = parser.parseFromString(parsedArgs, 'text/html');
 
-    const newElement = doc.body.firstChild;
-    return newElement;
-}
-
-let finalCals;
+let finalCals = 0
 let mealTotal = 0
 
 function calcCalories(event){
@@ -27,9 +19,12 @@ function calcCalories(event){
 }
 
 function mealAdd(event){
+    
     const mealContain = document.getElementById('mealContain')
     mealTotal += finalCals
     mealContain.innerText = mealTotal; 
+    
+
 }
 
 function resetBtn(event){
@@ -39,4 +34,13 @@ function resetBtn(event){
     mealTotal = 0
     mealContain.innerText = ''
     finCalContain.innerText = ''
+}
+
+function openCustomFood(event){
+    const customFoodEle = document.getElementById('add-custom-food')
+    customFoodWindow.style.display = 'block'
+}
+function closeCustomFood(event){
+    const customFoodEle = document.getElementById('add-custom-food')
+    customFoodWindow.style.display = 'none' 
 }

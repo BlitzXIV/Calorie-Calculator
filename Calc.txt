@@ -1,7 +1,10 @@
 Search Feature(For food nutrition lookup)
 Add custom foods (Filters & CRUD)
 Browser Local Storage 
-	
+
+take numbers from food window
+store in object 
+onclick call and use in calculator 
 
 
 
