@@ -2,3 +2,13 @@ Search Feature(For food nutrition lookup)
 Add custom foods (Filters & CRUD)
 Browser Local Storage 
 	
+
+
+
+
+create ui window 
+
+create object to be stored in browser 
+
+call on object values
+

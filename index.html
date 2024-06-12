@@ -8,7 +8,24 @@
     <script src="calc.js"></script>
 </head>
 <body>
+    <div id="custom-food-window">
+        <form>
+            Calories Per Serving 
+            <br>
+            <input required id="window-calPerServ" type="number">
+            <br>
+            Serving Amount
+            <br>
+            <input required id="window-servAmt" type="number">
+            <br>
+            <button>Save</button>
+            <span id="close">X</span>
+        </form>
+    </div>
+
     <div id="container" class="container">
+        <button id="add-custom-food">Add A Custom Food</button>
+
         <form onsubmit="calcCalories(event)" ;id="form">
             Calories Per Serving 
             <br>
