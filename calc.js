@@ -51,19 +51,23 @@ function closeCustomFood(event){
     customFoodWindow.style.display = 'none' 
 }
 
+
+
+
 function saveFood(event){
     event.preventDefault()
 
-    const foodNameEle = document.getElementById('foodName')
+    
     const windowCalPerServ = document.getElementById('window-calPerServ')
     const windowServAmt = document.getElementById('window-servAmt')
     const list = document.getElementById('food-list')
     
-    
+    const foodNameEle = document.getElementById('foodName')
+    let foodName = foodNameEle.value
 
     const ele = html`<button onclick='getFood(event)'>${foodName}</button>`
     
-    foodName = foodNameEle.value
+   
     foodData[foodName] = [ele, windowCalPerServ.value, windowServAmt.value]
     localStorage.setItem('foodData', JSON.stringify(foodData));
 
@@ -73,16 +77,18 @@ function saveFood(event){
 function getFood(event){
     event.preventDefault()
 
+    const foodName = event.target.textContent;
     const getData = localStorage.getItem('foodData')
     const parsedData = JSON.parse(getData)
 
-    let cals = parseFloat(document.getElementById('calPerServ').value);
-    let serv = parseFloat(document.getElementById('servAmt').value);
+    const [ele, calPerServ, servAmt] = parsedData[foodName]
 
+    document.getElementById('calPerServ').value = calPerServ;
+    document.getElementById('servAmt').value = servAmt;
+
+    
     closeCustomFood()
 
-    cals = parsedData.windowCalPerServ
-    serv = parsedData.windowServAmt
 
 
 }
