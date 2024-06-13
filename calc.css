@@ -57,13 +57,17 @@ button:hover {
     background-color: rgba(0,0,0,0.4); 
     
 }
-#windowContent{
+#inWindow{
   margin: 20% auto ; 
   padding: 20px;
   border: 1px solid #888;
   max-width: 50%; 
   background-color: white ;
 
+}
+
+#list{
+    text-align: center;
 }
 
 #close {

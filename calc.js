@@ -1,6 +1,15 @@
+function html(strings, ...values) {
+    const parsedArgs = strings.reduce((result, string, i) => result + string + (values[i] || ''), '');
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(parsedArgs, 'text/html');
+
+    const newElement = doc.body.firstChild;
+    return newElement;
+}
 
 let finalCals = 0
 let mealTotal = 0
+foodData = {}
 
 function calcCalories(event){
     event.preventDefault()
@@ -19,12 +28,9 @@ function calcCalories(event){
 }
 
 function mealAdd(event){
-    
     const mealContain = document.getElementById('mealContain')
     mealTotal += finalCals
     mealContain.innerText = mealTotal; 
-    
-
 }
 
 function resetBtn(event){
@@ -46,13 +52,38 @@ function closeCustomFood(event){
 }
 
 function saveFood(event){
+    event.preventDefault()
+
     const foodNameEle = document.getElementById('foodName')
     const windowCalPerServ = document.getElementById('window-calPerServ')
     const windowServAmt = document.getElementById('window-servAmt')
+    const list = document.getElementById('food-list')
+    
+    
 
-    foodData = {}
+    const ele = html`<button onclick='getFood(event)'>${foodName}</button>`
+    
     foodName = foodNameEle.value
-    foodData[foodName] = [windowCalPerServ.value, windowServAmt.value]
-
+    foodData[foodName] = [ele, windowCalPerServ.value, windowServAmt.value]
     localStorage.setItem('foodData', JSON.stringify(foodData));
+
+    list.appendChild(ele)
 }
+
+function getFood(event){
+    event.preventDefault()
+
+    const getData = localStorage.getItem('foodData')
+    const parsedData = JSON.parse(getData)
+
+    let cals = parseFloat(document.getElementById('calPerServ').value);
+    let serv = parseFloat(document.getElementById('servAmt').value);
+
+    closeCustomFood()
+
+    cals = parsedData.windowCalPerServ
+    serv = parsedData.windowServAmt
+
+
+}
+

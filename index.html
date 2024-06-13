@@ -9,22 +9,29 @@
 </head>
 <body>
     <div id="customFoodWindow">
-        <form id="windowContent">
-            <span onclick='closeCustomFood(event)' id="close">X</span>
-            Name your food
-            <br>
-            <input required id="foodName" type="text">
-            Calories Per Serving 
-            <br>
-            <input required id="window-calPerServ" type="number">
-            <br>
-            Serving Amount
-            <br>
-            <input required id="window-servAmt" type="number">
-            <br>
-            <button>Save</button>
-            
-        </form>
+        <div id="inWindow">
+            <form onsubmit="saveFood(event)" id="windowContent">
+                <span onclick='closeCustomFood(event)' id="close">X</span>
+                Name your food
+                <br>
+                <input required id="foodName" type="text">
+                Calories Per Serving 
+                <br>
+                <input required id="window-calPerServ" type="number">
+                <br>
+                Serving Amount
+                <br>
+                <input required id="window-servAmt" type="number">
+                <br>
+                <button>Save</button>
+            </form>
+
+            <div id="food-list">
+
+            </div>
+
+        </div>
+       
     </div>
 
     <div id="container" class="container">
