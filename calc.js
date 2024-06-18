@@ -43,16 +43,11 @@ function resetBtn(event){
 }
 
 function openCustomFood(event){
-    const customFoodEle = document.getElementById('add-custom-food')
     customFoodWindow.style.display = 'block'
 }
 function closeCustomFood(event){
-    const customFoodEle = document.getElementById('add-custom-food')
     customFoodWindow.style.display = 'none' 
 }
-
-
-
 
 function saveFood(event){
     event.preventDefault()

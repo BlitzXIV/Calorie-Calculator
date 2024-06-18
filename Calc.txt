@@ -3,8 +3,11 @@ Add custom foods (Filters & CRUD)
 Browser Local Storage 
 
 take numbers from food window
+
+
+
 store in object 
-    foodname is key
+onclick call and use in calculator 
 
 
 
