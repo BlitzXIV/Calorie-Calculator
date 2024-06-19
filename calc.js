@@ -10,6 +10,9 @@ function html(strings, ...values) {
 let finalCals = 0
 let mealTotal = 0
 foodData = {}
+localStorage.setItem('foodData', JSON.stringify(foodData));
+const getData = localStorage.getItem('foodData')
+const parsedData = JSON.parse(getData)
 
 function calcCalories(event){
     event.preventDefault()
@@ -64,7 +67,7 @@ function saveFood(event){
     
    
     foodData[foodName] = [ele, windowCalPerServ.value, windowServAmt.value]
-    localStorage.setItem('foodData', JSON.stringify(foodData));
+    
 
     list.appendChild(ele)
 }
@@ -73,8 +76,7 @@ function getFood(event){
     event.preventDefault()
 
     const foodName = event.target.textContent;
-    const getData = localStorage.getItem('foodData')
-    const parsedData = JSON.parse(getData)
+   
 
     const [ele, calPerServ, servAmt] = parsedData[foodName]
 
